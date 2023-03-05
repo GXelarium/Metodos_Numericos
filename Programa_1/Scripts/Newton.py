@@ -22,6 +22,8 @@ def metodo(F,max=15,tol=0.00005,op=0):
     
     print("Error: {:.6f} \nIteraciones:{}".format(error, count))
         
+-Israel Jesús Vélez Solano
+
     return iteracion
 
 
