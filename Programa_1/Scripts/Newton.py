@@ -11,14 +11,12 @@ def iter(F,op):
 
 def metodo(F,max=15,tol=0.00005,op=0):
     iteracion = F
-    print("Iteración {}: {}".format(0, iteracion))
+    print("Iteración {}: \nPunto: {}\nJacobiana: {}\nValores de la función: {}\nResultado del método: {}".format(0, iteracion, f.jacob(iteracion,op), f.func(iteracion,op), iteracion))
     for i in range(1, max+1):
-        jacobiana = f.jacob(iteracion,op)
-        valores_funcion = f.func(iteracion,op)
         aux = iteracion
         iteracion = iter(iteracion,op)
         error = norma(iteracion-aux)
-        print("Iteración {}: {}, Jacobiana: {}, Función: {}, Método: {}".format(i, iteracion, jacobiana, valores_funcion, error))
+        print("Iteración {}: \nPunto: {}\nJacobiana: {}\nValores de la función: {}\nResultado del método: {}\nError: {}\n".format(i, iteracion, f.jacob(iteracion,op), f.func(iteracion,op), iteracion, error))
         if error < tol:
             break
     
