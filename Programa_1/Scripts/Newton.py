@@ -42,6 +42,8 @@ def metodo(F,max=15,tol=0.00005,op=0):
         print("\n")
     
     print("\n---------------\nSOLUCIÓN \nNúmero de iteracion: {} \nError: {:.6f} \nPunto encontrado: {}".format(i, error, iteracion))
+    if error > tol:
+        print("NO CONVERGE")
 
     return iteracion
 
