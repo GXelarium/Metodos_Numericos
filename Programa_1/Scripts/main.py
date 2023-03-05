@@ -13,7 +13,6 @@ def metodo(opcion):
         max = int(input("Introduce el máximo de iteraciones: "))
         tol = float(input("Introduce la tolerancia: "))
         metodo = Newton.metodo(X,max,tol,opcion)
-        print(metodo)
 
 
 def menu():
@@ -64,7 +63,6 @@ Elaborado por:
 
 
 
-
 if __name__ == '__main__':
     loop = True
     while loop:
@@ -74,8 +72,3 @@ if __name__ == '__main__':
         if estado != 's':
              loop = False
         
-
-    # X = np.array([1.5,1.5])
-    # opcion = 1
-    # prueba = Newton.metodo(X,op=opcion)
-    # print(prueba)

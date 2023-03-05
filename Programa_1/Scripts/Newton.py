@@ -6,21 +6,42 @@ def norma(vector):
 
 
 def iter(F,op):
-    return F - np.matmul(np.linalg.inv(f.jacob(F,op)),f.func(F,op))
+    funcion = f.func(F,op)
+    jacobiana = f.jacob(F,op)
+    prod = np.matmul(np.linalg.inv(jacobiana),funcion)
+    for i in range(len(F)):
+        print("\t\t{:.6f}\t\t".format(F[i]),end=" ")
+        for j in range(len(F)):
+            print("{:.6f} ".format(jacobiana[i][j]), end=" ")
+        print("\t\t{:.6f} \t\t{:6f}".format(funcion[i],prod[i]), end=" ")
+        if op<3 and i!= 1:
+            print("")
+        elif op>2 and i!=2:
+            print("")
+        
+
+    return F - prod
 
 
 def metodo(F,max=15,tol=0.00005,op=0):
     iteracion = F
-    print("Iteración {}: \nPunto: {}\nJacobiana: {}\nValores de la función: {}\nResultado del método: {}".format(0, iteracion, f.jacob(iteracion,op), f.func(iteracion,op), iteracion))
+    print("")
+    if len(F)==3:
+        print("Iteración \tPunto \t\t\t\t Jacobiana \t\t\tValores de la función \t\tJ⁻1 * F \tError")
+    else:
+        print("Iteración \tPunto \t\t\t\t Jacobiana \t\tValores de la función \tJ-1 * F \tError")
     for i in range(1, max+1):
+        print("{}".format(i), end=" ")
         aux = iteracion
         iteracion = iter(iteracion,op)
         error = norma(iteracion-aux)
-        print("Iteración {}: \nPunto: {}\nJacobiana: {}\nValores de la función: {}\nResultado del método: {}\nError: {}\n".format(i, iteracion, f.jacob(iteracion,op), f.func(iteracion,op), iteracion, error))
+        print("\t{:.6f}".format(error))
+        print
         if error < tol:
             break
+        print("\n")
     
-    print("Error: {:.6f} \nIteraciones:{}".format(error, i))
+    print("\n---------------\nSOLUCIÓN \nNúmero de iteracion: {} \nError: {:.6f} \nPunto encontrado: {}".format(i, error, iteracion))
 
     return iteracion
 
