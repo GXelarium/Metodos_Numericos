@@ -10,19 +10,19 @@ def iter(F,op):
 
 
 def metodo(F,max=15,tol=0.00005,op=0):
-    iteracion = iter(F,op)
-    count = 0
-    for i in range(max):
+    iteracion = F
+    print("Iteración {}: {}".format(0, iteracion))
+    for i in range(1, max+1):
+        jacobiana = f.jacob(iteracion,op)
+        valores_funcion = f.func(iteracion,op)
         aux = iteracion
         iteracion = iter(iteracion,op)
         error = norma(iteracion-aux)
+        print("Iteración {}: {}, Jacobiana: {}, Función: {}, Método: {}".format(i, iteracion, jacobiana, valores_funcion, error))
         if error < tol:
             break
-        count += 1
     
-    print("Error: {:.6f} \nIteraciones:{}".format(error, count))
-        
-
+    print("Error: {:.6f} \nIteraciones:{}".format(error, i))
 
     return iteracion
 
