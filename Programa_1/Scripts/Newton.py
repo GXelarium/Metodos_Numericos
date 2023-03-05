@@ -25,6 +25,7 @@ def iter(F,op):
 
 def metodo(F,max=15,tol=0.00005,op=0):
     iteracion = F
+    convergencia = norma(iteracion)
     print("")
     if len(F)==3:
         print("Iteración \tPunto \t\t\t\t Jacobiana \t\t\tValores de la función \t\tJ⁻1 * F \tError")
@@ -42,7 +43,7 @@ def metodo(F,max=15,tol=0.00005,op=0):
         print("\n")
     
     print("\n---------------\nSOLUCIÓN \nNúmero de iteracion: {} \nError: {:.6f} \nPunto encontrado: {}".format(i, error, iteracion))
-    if error > tol:
+    if  error > convergencia:
         print("NO CONVERGE")
 
     return iteracion
