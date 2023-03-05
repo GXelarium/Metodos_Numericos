@@ -4,10 +4,12 @@ Este programa fue realizado en Python3
 
 ## **Para ejecutar el programa**:
 
-* En **Windows**: Descara el ejecutable **(pendiente)** y si marca un mensaje de advertencia solo basta con ignorarlo.
-* Otros sistemas: Correr el script **main.py**, para ello se necesita tener instalado **python3** y la libreria de **Numpy**
+* En **Windows**: Descarga el ejecutable **Programa_1.exe**.
+* Otros sistemas: Correr el script **main.py**, para ello se necesita tener instalado **python3** y la libreria de **Numpy**.
+
+Utiliza la pantalla completa para visualizar de manera correcta el contenido.
 ---
-## **Durante la ejecución del programa**
+## **Durante la ejecución del programa**:
 Después de escoger el sistema de ecuaciones a resolver, el programa te pedirá ingresar el punto inicial, introducelo **separado por comas**.
 Ejemplo.
 Para el punto **(1,1,1)** se debe ingresar de la sigueinte manera
