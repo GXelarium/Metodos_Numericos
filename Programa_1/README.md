@@ -6,7 +6,6 @@ Este programa fue realizado en Python3
 
 * En **Windows**: Descarga el ejecutable **Programa_1.exe**.
 * Otros sistemas: Correr el script **main.py**, para ello se necesita tener instalado **python3** y la libreria de **Numpy**.
-
 Utiliza la pantalla completa para visualizar de manera correcta el contenido.
 ---
 ## **Durante la ejecución del programa**:
